@@ -27,6 +27,7 @@ app.use(
 //routing
 app.use('/auth', require('./routes/authRoutes'));
 app.use('/application', require('./routes/applicationRoutes'));
+app.use('/jobs', require('./routes/jobRoutes'))
 
 
 mongoose.connection.once('open',()=>{

@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const createApplication = asyncHandler(async(req,res)=>{
     const {data} = req.body;
     const {token} = req.cookies
+    const today = new Date();
 
     if(token===undefined){
         return res.status(500).json({message:'Unauthorized user'})
@@ -30,7 +31,8 @@ const createApplication = asyncHandler(async(req,res)=>{
         experience:data.experience,
         skills:skills,
         coverLetter:data.coverLetter,
-        applicantId:decoded.id
+        applicantId:decoded.id,
+        applicationDate:today
     }
 
     const application = await Application.create(ApplicationObject);

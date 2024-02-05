@@ -27,6 +27,9 @@ const applicationSchema = new Schema({
     applicantId:{
         type:String
     },
+    applicationDate:{
+        tpye:Date
+    }
  
 
 });

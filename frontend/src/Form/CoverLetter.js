@@ -13,7 +13,7 @@ export function CoverLetter (){
   
     const content = (
       <div>
-        <label htmlFor="essay">Share your motivation for applying and how your values align with Serenity Retreats.</label>
+        <label htmlFor="essay">Share your motivation for applying and how your values align with  .</label>
         <textarea
           value={data.coverLetter}
           name="coverLetter"

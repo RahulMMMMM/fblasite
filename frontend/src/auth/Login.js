@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useRef,useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "../api/Axios";
+import Axios from "../api/Axios";
 import useAuthContext from "../hooks/useAuthContext";
 const LOGIN_URL = '/auth/login';
 
@@ -29,7 +29,7 @@ export default function Login() {
         e.preventDefault();
         
         try{
-            const response = await axios.post(LOGIN_URL,
+            const response = await Axios.post(LOGIN_URL,
                 { email, password },
                 {
                     headers: { 'Content-Type': 'application/json' },
