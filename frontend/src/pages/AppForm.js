@@ -3,11 +3,11 @@ import useFormContext from '../hooks/useFormContext';
 
 
 export default function AppForm(){
-    const {title,page,setPage,data,setData} = useFormContext();
+    
 
     return(
-        <div>
-            <h1>Application Form</h1>
+        <div className='flex flex-col justify-start items-center my-5'>
+            <h1 className='text-white text-4xl my-5'>Application Form</h1>
             <Form />
         </div>
     )

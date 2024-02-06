@@ -25,7 +25,7 @@ export default function App() {
             <title></title>
           </head>
           <Navbar />
-          <div>
+          
             <Routes>
               {/*Public routes*/}
               <Route exact path="" element={<Home  />} />
@@ -45,7 +45,7 @@ export default function App() {
                 
 
             </Routes>
-          </div>
+          
           
         </>
 

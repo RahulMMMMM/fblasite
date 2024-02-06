@@ -50,11 +50,11 @@ export default function Form(){
 
 
     return(
-        <form onSubmit={handleSubmit}>
-            <header>{title[page]}</header>
+        <form onSubmit={handleSubmit} className="text-white flex flex-col items-center bg-[#0d0e23]  px-40 py-10 text-xl rounded-lg max-w-5/8 min-w-5/8">
+            <header className="text-3xl">{title[page]}</header>
 
-            <div>
-                <button onClick={handlePrev} disabled={disablePrev} >Prev</button>
+            <div className="self-end" >
+                <button onClick={handlePrev} disabled={disablePrev} className="bg-[#181424] border border-gray-300 border-opacity-20 my-2 rounded-md" >Prev</button>
                 <button onClick={handleNext} disabled={disableNext} >Next</button>
                 <button type="submit" disabled={!canSubmit} >Submit</button>
             </div>

@@ -14,7 +14,7 @@ const FormInputs = () => {
     }
 
     const content = (
-        <div >
+        <div className="" >
             {display[page]}
         </div>
     )
