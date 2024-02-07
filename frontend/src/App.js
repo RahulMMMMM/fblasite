@@ -13,6 +13,8 @@ import LoginSecurity from "./Account/LoginSecurity";
 import ChangeInfo from "./Account/ChangeInfo";
 import ChangePassword from "./Account/ChangePassword";
 import { FormContextProvider } from "./context/FormContext";
+import WithoutNav from "./components/WithoutNav";
+import WithNav from "./components/WithNav";
 
 export default function App() {
 
@@ -22,27 +24,32 @@ export default function App() {
       <BrowserRouter>
         <>
           <head>
-            <title></title>
+            <title>Plato</title>
           </head>
-          <Navbar />
           
             <Routes>
-              {/*Public routes*/}
-              <Route exact path="" element={<Home  />} />
-              <Route path="job-openings" element={<JobOpenings />} />
-              <Route path="why-us" element={<WhyUs/>} />
-              <Route path="login" element={<Login />} />
-              <Route path="signup" element={<Signup />} />
-              
-              {/*Private routes*/}
-              <Route path="myaccount" element={<UserRoute />}>
-                <Route path="dashboard" element={<Dashboard />} />
-                <Route path="application-form" element={<AppForm />} />
-                <Route path="login-security" element={<LoginSecurity />} />                       
-                <Route path="change-info" element={<ChangeInfo />} />
-                <Route path="change-password" element={<ChangePassword />} />
-              </Route>
+              <Route element={<WithNav />}>
+                {/*Public routes*/}
+                <Route exact path="" element={<Home  />} />
+                <Route path="job-openings" element={<JobOpenings />} />
+                <Route path="why-us" element={<WhyUs/>} />
                 
+                
+                
+                {/*Private routes*/}
+                <Route path="myaccount" element={<UserRoute />}>
+                  <Route path="dashboard" element={<Dashboard />} />
+                  <Route path="application-form" element={<AppForm />} />
+                  <Route path="login-security" element={<LoginSecurity />} />                       
+                  <Route path="change-info" element={<ChangeInfo />} />
+                  <Route path="change-password" element={<ChangePassword />} />
+                </Route>
+              </Route>
+
+              <Route element={<WithoutNav />}>
+                <Route path="login" element={<Login />} />
+                <Route path="signup" element={<Signup />} />
+              </Route>
 
             </Routes>
           

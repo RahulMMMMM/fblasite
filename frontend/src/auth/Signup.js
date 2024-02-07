@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useRef,useState,useEffect,useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
+import logo from '../images/whitelogo.png';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import axios from "../api/Axios";
 const SIGNUP_URL = '/auth/signup';
 
@@ -60,50 +61,56 @@ export default function Signup() {
     }
 
     return (
-        <div className="login-container" >
-                <form className="login-form" onSubmit={handleSubmit} >
-                    <h2>Create Your Account</h2>
-                    <input 
-                        type="email" 
-                        placeholder="Email Address" 
-                        className="login-input"
-                        ref={emailRef} 
-                        onChange={(e)=> setEmail(e.target.value)} 
-                        value={email} 
-                        required/>
-                    <input type="text" 
-                        placeholder="First Name" 
-                        className="login-input" 
-                        onChange={(e)=> setFirst(e.target.value)} 
-                        value={firstname} 
-                        required/>
-                    <input type="text" 
-                        placeholder="Last Name" 
-                        className="login-input" 
-                        onChange={(e)=> setLast(e.target.value)} 
-                        value={lastname} 
-                        required/>
-                    <input type="password" 
-                        placeholder="Password" 
-                        className="login-input" 
-                        onChange={(e)=> setPassword(e.target.value)} 
-                        value={password} 
-                        required/>
-                    <input type="password" 
-                        placeholder="Confirm Password" 
-                        className="login-input" 
-                        onChange={(e)=> setCnfrmPassword(e.target.value)} 
-                        value={cnfrmPassword} 
-                        required/>
-                    
-                    <button type="submit" className="login-button" >Sign Up</button>
-                </form>
-                <p ref={errRef} className={errMsg?"text-red-500":"offscreen"} aria-live="assertive">{errMsg}</p>
-                <div className="signup-box">
-                    <p>Already have an account?</p>
-                    <Link to='/login'>Login</Link>
+        <div className="bg-gradient-to-t from-white from-70% to-[#92cbdf] h-full flex flex-col items-center" >
+            <div className="w-1/2 m-8">
+                <div className="w-full flex flex-row items-center justify-between mb-24">
+                    <img src={logo} className="h-20 w-20 rounded-full" />
+                    <div className="flex flex-row space-x-4">
+                        <p>Already have an account?</p>
+                        <Link to='/login'><strong>Log In</strong><ArrowForwardIcon /></Link>
+                        
+                    </div>
                 </div>
-        </div>
-
+                <form className="flex flex-col items-center space-y-6" onSubmit={handleSubmit} >
+                        <h2 className="text-xl">Create Your Account</h2>
+                        <input 
+                            type="email" 
+                            placeholder="Email Address" 
+                            className="w-[352px] h-[48px] bg-[#f0f4f4] px-4"
+                            ref={emailRef} 
+                            onChange={(e)=> setEmail(e.target.value)} 
+                            value={email} 
+                            required/>
+                        <input type="text" 
+                            placeholder="First Name" 
+                            className="w-[352px] h-[48px] bg-[#f0f4f4] px-4" 
+                            onChange={(e)=> setFirst(e.target.value)} 
+                            value={firstname} 
+                            required/>
+                        <input type="text" 
+                            placeholder="Last Name" 
+                            className="w-[352px] h-[48px] bg-[#f0f4f4] px-4" 
+                            onChange={(e)=> setLast(e.target.value)} 
+                            value={lastname} 
+                            required/>
+                        <input type="password" 
+                            placeholder="Password" 
+                            className="w-[352px] h-[48px] bg-[#f0f4f4] px-4" 
+                            onChange={(e)=> setPassword(e.target.value)} 
+                            value={password} 
+                            required/>
+                        <input type="password" 
+                            placeholder="Confirm Password" 
+                            className="w-[352px] h-[48px] bg-[#f0f4f4] px-4" 
+                            onChange={(e)=> setCnfrmPassword(e.target.value)} 
+                            value={cnfrmPassword} 
+                            required/>
+                        <p ref={errRef} className={errMsg?"text-red-500":"offscreen"} aria-live="assertive">{errMsg}</p>
+                        <button type="submit" className="bg-[#0960b7] rounded-full text-white p-3 w-[352px] h-[48px]" >Sign Up</button>
+                    </form>
+                    
+                    
+            </div>
+     </div>
     );
 }

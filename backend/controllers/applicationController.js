@@ -1,6 +1,7 @@
 const Application = require('../models/Application');
 const asyncHandler = require('express-async-handler');
 const jwt = require('jsonwebtoken');
+const Job = require('../models/Job');
 
 const createApplication = asyncHandler(async(req,res)=>{
     const {data} = req.body;
@@ -10,13 +11,15 @@ const createApplication = asyncHandler(async(req,res)=>{
     if(token===undefined){
         return res.status(500).json({message:'Unauthorized user'})
     }
-
+    console.log(data)
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
     const skills = data.skills.split(',');
 
+    const job = await Job.findOne({reqId:data.jobTitle}).exec()
+
     ApplicationObject = {
-        jobTitle: data.jobTitle,
+        job: job,
         info:{
             firstname:data.firstName,
             lastName:data.lastName,
@@ -34,8 +37,11 @@ const createApplication = asyncHandler(async(req,res)=>{
         applicantId:decoded.id,
         applicationDate:today
     }
+    console.log(ApplicationObject)
 
     const application = await Application.create(ApplicationObject);
+
+    console.log(application)
 
     if(application){
         return res.status(200).json({message:'Successfully Applied'})

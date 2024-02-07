@@ -13,7 +13,6 @@ export default function Navbar(){
             <div className='flex flex-row space-x-4 mx-20'>
                 <Link to='why-us'>Why Us?</Link>
                 <Link to='job-openings'>Job Openings</Link>
-                <Link to='myaccount/application-form'>Apply Now!</Link>
             </div>
             
             <div >

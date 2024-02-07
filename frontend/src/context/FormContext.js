@@ -16,7 +16,7 @@ export const FormContextProvider = ({children}) => {
     const [page,setPage] = useState(0);
 
     const [data,setData]=useState({
-        jobTitle:"Webdev",
+        jobTitle:"",
         firstName:"",
         lastName:"",
         email:"",

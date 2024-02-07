@@ -22,8 +22,11 @@ export default function JobOpenings(){
     },[]);
 
     return(
-        <div>
-            <h1>Current Job Listings</h1>
+        <div className="bg-[#00000f] h-full text-white flex flex-col items-center">
+            <div className="h-1/5 flex flex-col items-center ">
+                <h1 className="mt-[70px] text-4xl">Current Job Listing</h1>
+            </div>
+            <div className="h-4/5 bg-[#0d0e23] p-[20px] flex flex-col items-center w-full rounded-lg">
             {
                 jobs.map((job)=>{
                     return(
@@ -31,6 +34,8 @@ export default function JobOpenings(){
                     )
                 })
             }
+            </div>
+            
         </div>
     )
 }

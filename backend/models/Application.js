@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const applicationSchema = new Schema({
     jobTitle:{
-        Type:String
+        Type:Object
     },
     info:{
         type:Object,
