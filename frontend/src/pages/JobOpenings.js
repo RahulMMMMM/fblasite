@@ -24,7 +24,7 @@ export default function JobOpenings(){
     return(
         <div className="bg-gradient-to-br from-[#0d0e23] from-20% to-[#6224A8] bg-gradient-to-bl from-[#0d0e23] from=20% to-[#6224A8] h-full flex flex-col items-center h-full w-full text-white flex flex-col items-center">
             <h1 className="mt-[70px] text-4xl">Current Job Listings</h1>
-            <div className="h-4/5  p-[20px] flex flex-col items-center w-full rounded-lg space-y-6">
+            <div className="h-4/5  p-[20px] flex flex-col items-center w-1/2 rounded-lg space-y-6">
             {
                 jobs.map((job)=>{
                     return(

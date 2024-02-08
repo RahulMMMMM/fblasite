@@ -6,7 +6,7 @@ import seattle from '../images/seattle.jpg';
 export default function Home(){
 
     return(
-        <div className="text-white h-full flex flex-col items-center justify-start">
+        <div className="text-white h-full flex flex-col items-center justify-start bg-gradient-to-t from-[#00000f] from-80% to-[#0c4f8c] p-8">
             <div className="flex flex-col justify-center items-center h-3/5 w-2/3">
                 <h1 className="text-7xl m-6">Where Imagination Meets Reality</h1>
                 <p className="text-center text-l w-3/4">Welcome to Plato Inc., a cutting-edge mixed-reality company that thrives on 
