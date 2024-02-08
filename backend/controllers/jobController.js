@@ -4,7 +4,6 @@ const crypto = require('crypto');
 
 const getJobs = asyncHandler(async(req,res)=>{
     const jobs = await Job.find({});
-    console.log(jobs)
     res.status(200).json({jobs});
   
 });

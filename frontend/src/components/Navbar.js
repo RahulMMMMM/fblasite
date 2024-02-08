@@ -9,7 +9,10 @@ export default function Navbar(){
 
     return(
         <nav className='flex flex-row px-10 py-5 bg-inherit justify-center text-white border-b border-gray-300 border-opacity-20 items-center max-h-90'>
-            <Link to='/'><img src={logo} alt='Plato' className='h-12 w-12' m-0/></Link>
+            <Link to='/' className='flex flex-row items-center space-x-4'>
+                <img src={logo} alt='Plato' className='h-12 w-12' m-0/>
+                <strong>Plato</strong>
+            </Link>
             <div className='flex flex-row space-x-4 mx-20'>
                 <Link to='why-us'>Why Us?</Link>
                 <Link to='job-openings'>Job Openings</Link>

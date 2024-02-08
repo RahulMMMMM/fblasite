@@ -8,7 +8,7 @@ export default function JobCard(props){
    
 
     return(
-        <div class="flex flex-row min-w-6/8 max-w-6/8 h-166 p-[20px] items-center justify-between bg-[#252639] rounded-full">
+        <div class="flex flex-row min-w-6/8 max-w-6/8 h-166 p-[20px] items-center justify-between">
             <div class="flex flex-col m-[20px] flex-grow">
                 <h2 class="text-2xl">{props.jobTitle}</h2>
                 <h2 class="text-sm text-[#b3b3b3]">Req ID: {props.reqId}</h2>

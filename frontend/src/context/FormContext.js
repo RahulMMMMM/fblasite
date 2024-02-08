@@ -24,7 +24,7 @@ export const FormContextProvider = ({children}) => {
         degree:"",
         major:"",
         gradYear:"",
-        workExperience:[],
+        workExperience:"",
         skills:"",
         coverLetter:""
     });

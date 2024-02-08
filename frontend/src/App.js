@@ -15,6 +15,7 @@ import ChangePassword from "./Account/ChangePassword";
 import { FormContextProvider } from "./context/FormContext";
 import WithoutNav from "./components/WithoutNav";
 import WithNav from "./components/WithNav";
+import Applications from "./Account/Applications"
 
 export default function App() {
 
@@ -43,6 +44,7 @@ export default function App() {
                   <Route path="login-security" element={<LoginSecurity />} />                       
                   <Route path="change-info" element={<ChangeInfo />} />
                   <Route path="change-password" element={<ChangePassword />} />
+                  <Route path="applications" element={<Applications />} />
                 </Route>
               </Route>
 

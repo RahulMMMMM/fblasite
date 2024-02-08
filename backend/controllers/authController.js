@@ -91,6 +91,10 @@ const updateUser = asyncHandler(async (req, res)=>{
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const user = await User.findById(decoded.id).exec()
 
+    if(info===""){
+        res.status(400).json({message:`${type} cannot be empty`});
+    }
+
     if(type==="name"){
         const firstname = info.slice(0,info.indexOf(" "));
         const lastname = info.slice(info.indexOf(" ")+1);

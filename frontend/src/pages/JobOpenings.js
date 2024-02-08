@@ -22,11 +22,9 @@ export default function JobOpenings(){
     },[]);
 
     return(
-        <div className="bg-[#00000f] h-full text-white flex flex-col items-center">
-            <div className="h-1/5 flex flex-col items-center ">
-                <h1 className="mt-[70px] text-4xl">Current Job Listing</h1>
-            </div>
-            <div className="h-4/5 bg-[#0d0e23] p-[20px] flex flex-col items-center w-full rounded-lg">
+        <div className="bg-gradient-to-br from-[#0d0e23] from-20% to-[#6224A8] bg-gradient-to-bl from-[#0d0e23] from=20% to-[#6224A8] h-full flex flex-col items-center h-full w-full text-white flex flex-col items-center">
+            <h1 className="mt-[70px] text-4xl">Current Job Listings</h1>
+            <div className="h-4/5  p-[20px] flex flex-col items-center w-full rounded-lg space-y-6">
             {
                 jobs.map((job)=>{
                     return(

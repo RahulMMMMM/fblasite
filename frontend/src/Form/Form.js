@@ -31,7 +31,6 @@ export default function Form(){
     const handleSubmit = async (e) => {
         e.preventDefault()
         try{
-            console.log(data);
             const response = await Axios.post(APP_URL,
                 { data },
                 {
@@ -50,7 +49,7 @@ export default function Form(){
                 degree:"",
                 major:"",
                 gradYear:"",
-                workExperience:[],
+                workExperience:"",
                 skills:"",
                 coverLetter:""
             });

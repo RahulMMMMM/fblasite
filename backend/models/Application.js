@@ -2,9 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const applicationSchema = new Schema({
-    jobTitle:{
-        Type:Object
-    },
     info:{
         type:Object,
         
@@ -28,7 +25,16 @@ const applicationSchema = new Schema({
         type:String
     },
     applicationDate:{
-        tpye:Date
+        type:Date
+    },
+    job:{
+        type:Object
+    },
+    status:{
+        type:String
+    },
+    id:{
+        type:String
     }
  
 
