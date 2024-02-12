@@ -33,5 +33,5 @@ const port = process.env.PORT || 8080;
 
 mongoose.connection.once('open',()=>{
   console.log('Connected to Mongodb')
-  app.listen(8080, ()=>console.log(`listening on port ${port}`))
+  app.listen(port, ()=>console.log(`listening on port ${port}`))
 })
