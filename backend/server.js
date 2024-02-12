@@ -29,8 +29,9 @@ app.use('/auth', require('./routes/authRoutes'));
 app.use('/application', require('./routes/applicationRoutes'));
 app.use('/jobs', require('./routes/jobRoutes'))
 
+const port = process.env.PORT || 8080;
 
 mongoose.connection.once('open',()=>{
   console.log('Connected to Mongodb')
-  app.listen(4000, ()=>console.log("listening on port 4000"))
+  app.listen(8080, ()=>console.log(`listening on port ${port}`))
 })
